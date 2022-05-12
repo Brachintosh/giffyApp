@@ -38,3 +38,7 @@ a:hover{
   color: tomato;
   cursor: pointer;
 }
+
+i {
+  font-size: 80px;
+}
