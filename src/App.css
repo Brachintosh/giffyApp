@@ -19,8 +19,22 @@ a {
   text-decoration: none;
   font-size: 3.2vh;
   padding: 4px;
+  transition: all 800ms;
+}
+a:hover{
+  transition: all 500ms;
+  color: tomato;
+  cursor: pointer;
+  font-size: 3.6vh;
+  letter-spacing:0.5vh;
 }
 
-h3 {
-  letter-spacing:0.5vh
+.app-title {
+  letter-spacing:0.5vh;
+  transition: all 500ms;
+}
+.app-title:hover{
+  transition: all 500ms;
+  color: tomato;
+  cursor: pointer;
 }
