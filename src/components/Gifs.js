@@ -1,22 +1,20 @@
 import React from 'react';
 import { Link } from 'wouter';
-import './ListStyle.css';
+// import Fav from './Fav';
 import './Gif.css';
 
 const Gifs = ({ title, id, url }) => {
   return (
-    <div className='Gif'>
-      <Link to={`/gif/${id}`} className='Gif-link' >
-        <p>{title}</p>
-        <img className='gif-list-img' src={url} key={id} alt={title} />
+    <div className="Gif">
+      <div className="Gif-buttons">
+        {/* <Fav id={id}></Fav> */}
+      </div>
+      <Link to={`/gif/${id}`} className='Gif-link'>
+        <h4>{title}</h4>
+        <img loading='lazy' alt={title} src={url} />
       </Link>
-    </div>    
+    </div> 
   )
 };
 
 export default Gifs;
- 
-// <a href={`#${id}`} className='gif-list' key={id}>
-//     <p>{title}</p>
-//     <img className='gif-list-img' src={url} key={id} alt={title} />
-// </a>
