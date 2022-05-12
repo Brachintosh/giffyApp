@@ -5,7 +5,7 @@ import { Route, Link } from 'wouter';
 import Home from './pages/Home';
 import Detail from './pages/Detail';
 import SearchResults from './pages/SearchResults';
-import TitleLogo from './screenshot1.png';
+import TitleLogo from './assets/screenshot1.png';
 import FooterBrand from './components/FooterBrand';
 import ScrollToTop from './components/ScrollToTop';
 
@@ -20,14 +20,6 @@ function App() {
             <h3 className='app-title' >GiffyApp</h3>
           </div>
         </Link>
-        
-        {/*
-        <Link to='/gif/panda' >Giffs de Pandas</Link>
-        <Link to='/gif/brasil' >Giffs de Brasil</Link>
-        <Link to='/gif/argentina' >Giffs de Argentina</Link>
-        <Link to='/gif/matrix' >Giffs de Matrix</Link>
-        */}
-        <Route path='/gif/:keyword' component={ListOfGifs} /> 
 
         <Route component={Home} path='/' />
         <Route component={Detail} path='/gif/:id' />
