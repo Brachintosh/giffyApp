@@ -1,21 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import LoadingSpinner from "../../components/LoadingSpinner";
 import ListOfGifs from "../../components/ListOfGifs";
-import getGifs from "../../services/getGifs";
+import useGifs from "../../hooks/useGifs";
 
 export default function SearchResults({ params }) {
     const { keyword } = params;
-    const [loading, setLoading] = useState(false);
-    const [gifs, setGifs] = useState([]);
-
-    useEffect(function() {
-        setLoading(true)
-        getGifs({ keyword })
-            .then(gifs => {
-                setGifs(gifs);
-                setTimeout(() => setLoading(false), 2500);
-            });
-    }, [keyword]);
+    // Custom Hook:
+    const { loading, gifs } = useGifs({ keyword });
 
     return(
         <>
