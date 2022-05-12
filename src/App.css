@@ -14,6 +14,19 @@
   color: white;
 }
 
+.App-logo {
+  height: 50px;
+  width: 50px;
+  transition: all 800ms;
+}
+.App-logo:hover {
+  height: 75px;
+  width: 75px;
+  cursor: pointer;
+  filter:hue-rotate(180deg);
+  transition: all 800ms;
+}
+
 a {
   color: aliceblue;
   text-decoration: none;
