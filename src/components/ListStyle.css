@@ -1,0 +1,22 @@
+.gif-list{
+    display: flex;
+    flex-direction: column;
+    border:1.3px solid #eee;
+    border-radius: 10px;
+    padding: .5em;
+    width: 60vw;
+    margin: 6vh;
+    padding: 40px;
+    text-decoration: none;
+    color: aliceblue;
+}
+
+.gif-list-img{
+    margin: 1vh;
+    border-radius: 12px;
+    object-fit: contain;
+    /* min-width: auto;
+    max-width: 130em;
+    min-height: auto;
+    max-height: 200em; */
+}
