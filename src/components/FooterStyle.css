@@ -4,15 +4,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100vw;
+    max-width: 99.5vw;
     text-align: center;
     background-color: rgb(236, 239, 241);
+    padding-bottom: .5em;
   }
   .containerFooter span {
     padding-left: .75rem;
   }
   .containerFooter img {
-      /* border: red 2px solid; */
       margin-top: 5px;
       display: flex;
       justify-content: center;
