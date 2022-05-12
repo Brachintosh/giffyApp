@@ -13,3 +13,14 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
+a {
+  color: aliceblue;
+  text-decoration: none;
+  font-size: 3.2vh;
+  padding: 4px;
+}
+
+h3 {
+  letter-spacing:0.5vh
+}

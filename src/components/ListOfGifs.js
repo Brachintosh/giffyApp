@@ -2,7 +2,9 @@ import React, { useEffect, useState } from 'react'
 import Gifs from './Gifs'
 import getGifs from '../services/getGifs';
 
-const ListOfGifs = ({ keyword }) => {
+const ListOfGifs = ({ params }) => {
+  const { keyword } = params;
+  // console.log('keyword :>> ', keyword);
   const [gifs, setGifs] = useState([]);
 
   useEffect(function() {
@@ -15,7 +17,7 @@ const ListOfGifs = ({ keyword }) => {
   return (
     <div >
       {
-          gifs.map(({ id, title, url }) =>{
+          gifs?.map(({ id, title, url }) =>{
             return <Gifs
                        title={title}
                        id={id}

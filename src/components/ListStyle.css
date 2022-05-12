@@ -11,12 +11,11 @@
     color: aliceblue;
 }
 
-.gif-list-img{
-    margin: 1vh;
-    border-radius: 12px;
+.gif-list img{
+    margin: 0.4vh;
     object-fit: contain;
-    /* min-width: auto;
+    min-height: fit-content;
+    max-height: 50vh;
+    min-width: auto;
     max-width: 130em;
-    min-height: auto;
-    max-height: 200em; */
 }
