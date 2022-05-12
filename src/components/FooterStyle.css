@@ -1,0 +1,20 @@
+.containerFooter {
+    padding: 5px 0px 5px 0px;
+    font-size: .94rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    text-align: center;
+    background-color: rgb(236, 239, 241);
+  }
+  .containerFooter span {
+    padding-left: .75rem;
+  }
+  .containerFooter img {
+      /* border: red 2px solid; */
+      margin-top: 5px;
+      display: flex;
+      justify-content: center;
+      align-self: center;
+  }
