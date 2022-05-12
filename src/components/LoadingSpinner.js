@@ -1,6 +1,6 @@
-import './Loader.css';
+import './Spinner.css';
 
-export default function LoaderHome() {
+export default function LoadingSpinner() {
     return (
         <div className='loader'><br />
             <h1 className="name-loading"> Loading... </h1><br />

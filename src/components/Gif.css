@@ -1,0 +1,8 @@
+.Gif {
+    display: flex;
+    justify-content: center;
+}
+
+.Gif-link {
+    width: fit-content;
+}
