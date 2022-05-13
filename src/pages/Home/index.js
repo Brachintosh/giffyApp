@@ -22,7 +22,7 @@ export default function Home() {
 
     return(
         <>
-            <form onSubmit={handleSubmit}>
+            <form className="App-searchBar"  onSubmit={handleSubmit}>
                 <input placeholder="Search for a gif..." onChange={handleInput} type='text' value={keyword} />
                 <button>Search!</button>
             </form>

@@ -23,8 +23,8 @@ function App() {
     }>
     <div className="App">
       <section className='App-content'>
-        <Link to='/'>
-          <div>
+        <Link to='/' >
+          <div className='App-link'>
             <img alt="GiffyLogo" className='App-logo' src={TitleLogo} />
             <h3 className='app-title' >GiffyApp</h3>
           </div>
