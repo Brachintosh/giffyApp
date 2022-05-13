@@ -8,10 +8,19 @@ import SearchResults from './pages/SearchResults';
 import TitleLogo from './assets/screenshot1.png';
 import FooterBrand from './components/FooterBrand';
 import ScrollToTop from './components/ScrollToTop';
+import StaticContext from './context/StaticContext';
+import {GifsContextProvider} from './context/GifsContext';
 
 function App() {
 
   return (
+    <StaticContext.Provider value={
+      {
+        nombre: 'brachintosh',
+        suscribeteAlCanal: true,
+        edad: 31,
+      }
+    }>
     <div className="App">
       <section className='App-content'>
         <Link to='/'>
@@ -21,14 +30,18 @@ function App() {
           </div>
         </Link>
 
-        <Route component={Home} path='/' />
-        <Route component={Detail} path='/gif/:id' />
-        <Route component={SearchResults} path='/search/:keyword' />
+        <GifsContextProvider>
+          <Route component={Home} path='/' />
+          <Route component={Detail} path='/gif/:id' />
+          <Route component={SearchResults} path='/search/:keyword' />
+        </GifsContextProvider>
+
         <ScrollToTop hidden showBelow={150}/>
       </section>
 
       <FooterBrand />
     </div>
+    </StaticContext.Provider>
   );
 }
 

@@ -3,7 +3,7 @@ import { Link } from 'wouter';
 // import Fav from './Fav';
 import './Gif.css';
 
-const Gifs = ({ title, id, url }) => {
+const Gif = ({ title, id, url }) => {
   return (
     <div className="Gif">
       <div className="Gif-buttons">
@@ -17,4 +17,4 @@ const Gifs = ({ title, id, url }) => {
   )
 };
 
-export default Gifs;
+export default Gif;

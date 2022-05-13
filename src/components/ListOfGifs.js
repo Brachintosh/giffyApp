@@ -1,5 +1,5 @@
 import React from 'react';
-import Gifs from './Gifs';
+import Gif from './Gifs';
 import './ListOfGifs.css';
 
 export default function ListOfGifs({ gifs }) {
@@ -8,7 +8,7 @@ export default function ListOfGifs({ gifs }) {
     <div className='ListOfGifs'>
       {
           gifs?.map(({ id, title, url }) =>
-            <Gifs
+            <Gif
                 title={title}
                 id={id}
                 url={url}
