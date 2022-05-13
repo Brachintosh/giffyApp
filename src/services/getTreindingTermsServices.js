@@ -16,12 +16,9 @@ const APIdata_ToGifs = apiResponse => {
     return [];
 }
 
-export default function getGifs({limit=32, keyword='morty'} = {}) {
-    const apiURL = `${API_URL}/search?api_key=${API_KEY}&q=${keyword}&limit=32&offset=0&rating=g&lang=en`
-    // const apiURL = 
-    //     `https://api.giphy.com/v1/gifs/search?
-    //         api_key=${apiKey}&
-    //         q=${keyword}&limit=${limit}&offset=0&rating=g&lang=en`
+export default function getTrendingTerms() {
+    const apiURL = `${API_URL}${API_KEY}&
+            q=${keyword}&limit=32&offset=0&rating=g&lang=en`
 
     return fetch(apiURL)
         .then(res => res.json())

@@ -23,22 +23,35 @@ export default function Home() {
     return(
         <>
             <form className="App-searchBar"  onSubmit={handleSubmit}>
-                <input placeholder="Search for a gif..." onChange={handleInput} type='text' value={keyword} />
                 <button>Search!</button>
+                <input placeholder="Search for a gif..." onChange={handleInput} type='text' value={keyword} />
             </form>
-            <h3 className="App-title" >⤗ Ésta es la última búsqueda:</h3>
-            <ListOfGifs gifs={gifs} loading={loading} />
-            <h3 className="App-title" >⤗ Éstos son los Giffs más vistos:</h3>
             
-            <ul>
-                {
-                    POPULAR_GIFS?.map((popGifs) => (
-                        <li key={popGifs} >
-                            <Link to={`/search/${popGifs}`} >Giffs de {popGifs}</Link>
-                        </li>
-                    ))
-                }
-            </ul>
+            {/* <h3 className="App-title" >⤗ Ésta es la última búsqueda:</h3>
+            <ListOfGifs gifs={gifs} loading={loading} />
+            <h3 className="App-title" >⤗ Éstos son los Giffs más vistos:</h3> */}
+            <div className="App-main">
+                <div className="App-results">
+                    <h3 className="App-title" >⤗ Ésta es la última búsqueda:</h3>
+                    <ListOfGifs gifs={gifs} />
+                </div>
+
+                <div>
+                    <h3 className="App-title" >⤗ Éstos son los Giffs más vistos:</h3>
+                    <ul>
+                        {
+                            POPULAR_GIFS?.map((popGifs) => (
+                                <li key={popGifs} >
+                                    <Link to={`/search/${popGifs}`} >Giffs de {popGifs}</Link>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </div>
+
+            </div>
+            
+            
         </>
     )
 };
