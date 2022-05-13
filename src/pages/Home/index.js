@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useLocation } from "wouter";
 import useGifs from "../../hooks/useGifs";
 import ListOfGifs from "../../components/ListOfGifs";
+import TrendingSearches from "../../components/TrendingSearches";
 
 const POPULAR_GIFS = ['Pandas', 'Argentina', 'Brasil', 'Matrix', ];
 
@@ -13,7 +14,7 @@ export default function Home() {
     const handleSubmit = (e) => {
         e.preventDefault();
         //  Navigate to route
-        pushLocation(`/search/:${keyword}`);
+        pushLocation(`/search/${keyword}`);
     }
 
     const handleInput = (e) => {
@@ -36,7 +37,8 @@ export default function Home() {
                     <ListOfGifs gifs={gifs} />
                 </div>
 
-                <div>
+                <TrendingSearches />
+                {/* <div>
                     <h3 className="App-title" >⤗ Éstos son los Giffs más vistos:</h3>
                     <ul>
                         {
@@ -47,7 +49,7 @@ export default function Home() {
                             ))
                         }
                     </ul>
-                </div>
+                </div> */}
 
             </div>
             

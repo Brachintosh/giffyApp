@@ -12,6 +12,9 @@ export default function Detail({ params }) {
   // console.log('.find(gif) >>> ', gif?.id);
 
   return (
-    <Gif {...gif} />
+    <>
+      <h3 className="App-title">{gif.title}</h3>
+      <Gif {...gif} />
+    </>
   )
 };
