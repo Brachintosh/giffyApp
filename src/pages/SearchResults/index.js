@@ -15,7 +15,7 @@ export default function SearchResults({ params }) {
             ? <LoadingSpinner /> 
             : <>
                 <h3 className="App-title">{decodeURI(keyword)}</h3><ListOfGifs gifs={gifs} />
-              </> 
+            </> 
         }
         </>
     )

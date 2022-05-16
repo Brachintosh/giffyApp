@@ -29,7 +29,7 @@ function App() {
             <h3 className='app-title' >GiffyApp</h3>
           </div>
         </Link>
-
+   
         <GifsContextProvider>
           <Route component={Home} path='/' />
           <Route component={Detail} path='/gif/:id' />
