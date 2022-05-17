@@ -1,5 +1,4 @@
 import React from 'react';
-import ListOfGifs from './components/ListOfGifs';
 import './App.css';
 import { Route, Link } from 'wouter';
 import Home from './pages/Home';

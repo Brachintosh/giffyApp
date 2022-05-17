@@ -1,17 +1,14 @@
 import React, { useState } from "react";
-import { Link, useLocation } from "wouter";
+import { useLocation } from "wouter";
 import useGifs from "../../hooks/useGifs";
 import ListOfGifs from "../../components/ListOfGifs";
-import TrendingSearches from "../../components/TrendingSearches";
 import LazyTrending from "../../components/LazyTrending";
-
-
-const POPULAR_GIFS = ['Pandas', 'Argentina', 'Brasil', 'Matrix', ];
 
 export default function Home() {
     const [keyword, setKeyword] = useState('');
-    const [path, pushLocation] = useLocation();
-    const {loading, gifs} = useGifs();
+    
+    const [path, pushLocation] = useLocation(); // eslint-disable-line
+    const {loading, gifs} = useGifs();   // eslint-disable-line
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -31,10 +28,6 @@ export default function Home() {
                 <input placeholder="Search for a gif..." onChange={handleInput} type='text' value={keyword} />
             </form>
         </header>
-
-            {/* <h3 className="App-title" >⤗ Ésta es la última búsqueda:</h3>
-            <ListOfGifs gifs={gifs} loading={loading} />
-            <h3 className="App-title" >⤗ Éstos son los Giffs más vistos:</h3> */}
             <div className="App-wrapper">
                 <div className="App-main">
                     <div className="App-results">
@@ -46,18 +39,6 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-            {/* <div>
-                <h3 className="App-title" >⤗ Éstos son los Giffs más vistos:</h3>
-                <ul>
-                    {
-                        POPULAR_GIFS?.map((popGifs) => (
-                            <li key={popGifs} >
-                                <Link to={`/search/${popGifs}`} >Giffs de {popGifs}</Link>
-                            </li>
-                        ))
-                    }
-                </ul>
-            </div> */}
         </>
     )
 };

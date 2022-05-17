@@ -9,7 +9,7 @@ const FooterBrand = () => {
         <div className="containerFooter">
 
             <img alt="icon-code" src={codeLogo} width="24px" height="24px" />
-            <span style={{color: 'tomato'}} >developed by <a href='https://github.com/Brachintosh/' target='_blank' style={{color: '#343434'}} >@brachintosh</a></span>
+            <span style={{color: 'tomato'}} >developed by <a href='https://github.com/Brachintosh/' target='_blank' rel="noreferrer" style={{color: '#343434'}} >@brachintosh</a></span>
 
         </div>
     </footer>
