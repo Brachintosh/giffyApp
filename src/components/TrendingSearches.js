@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Category from './Category';
 import getTrendingTerms from "../services/getTreindingTermsServices";
 
@@ -17,14 +17,17 @@ function TrendingSearches() {
 
 export default function LazyTrending() { 
     const [show, setShow] = useState(false);
+    const elementRef = useRef();
 
     useEffect(function() {
-        const onChange = (entries) => { 
+        const onChange = (entries, observer) => { 
             // console.log('entries :>> ', entries);
             const el  = entries[0]
-            // console.log('el :>> ', el);
+            console.log('el :>> ', el.isIntersecting);
+
             if(el.isIntersecting){
                 setShow(true);
+                observer.disconnect()
             }
         }
 
@@ -32,12 +35,14 @@ export default function LazyTrending() {
             rootMargin: '100px',
         })
 
-        observer.observe(document.getElementById('LazyTrending'))
+        observer.observe(elementRef.current);
+
+        return () => observer.disconnect();
     });
 
     return (
         <>
-            <div id='LazyTrending' >
+            <div ref={elementRef} >
                 {
                     show ? <TrendingSearches /> : null
                 }
