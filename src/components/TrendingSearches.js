@@ -1,8 +1,8 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useState, useEffect } from 'react';
 import Category from './Category';
 import getTrendingTerms from "../services/getTreindingTermsServices";
 
-function TrendingSearches() {
+export default function TrendingSearches() {
     const [trends, setTrends] = useState([]);
 
     useEffect(function() {
@@ -12,41 +12,5 @@ function TrendingSearches() {
 
     return(
         <Category name='Tendencias' options={trends} />
-    )
-};
-
-export default function LazyTrending() { 
-    const [show, setShow] = useState(false);
-    const elementRef = useRef();
-
-    useEffect(function() {
-        const onChange = (entries, observer) => { 
-            // console.log('entries :>> ', entries);
-            const el  = entries[0]
-            console.log('el :>> ', el.isIntersecting);
-
-            if(el.isIntersecting){
-                setShow(true);
-                observer.disconnect()
-            }
-        }
-
-        const observer = new IntersectionObserver(onChange, {
-            rootMargin: '100px',
-        })
-
-        observer.observe(elementRef.current);
-
-        return () => observer.disconnect();
-    });
-
-    return (
-        <>
-            <div ref={elementRef} >
-                {
-                    show ? <TrendingSearches /> : null
-                }
-            </div>
-        </>
     )
 };

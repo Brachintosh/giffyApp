@@ -19,7 +19,7 @@ export default function Category({ name, options = [] }) {
             index={index}
             type='primary'
           >
-            <CategoryLink to={`/search/${singleOption}`}>
+            <CategoryLink className='Category-link-name' to={`/search/${singleOption}`}>
               {singleOption}
             </CategoryLink>
           </CategoryListItem>
