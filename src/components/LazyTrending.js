@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import useNearScreen from "../hooks/useNearScreen";
 import LoadingSpinner from "./LoadingSpinner";
 
@@ -11,11 +11,13 @@ export default function LazyTrending() {
 
     return (
         <>
-            <div ref={fromRef} >
-                {
-                    isNearScreen ? <TrendingSearches /> : <LoadingSpinner /> 
-                }
-            </div>
+            <Suspense fallback={<LoadingSpinner /> } >
+                <div ref={fromRef} >
+                    {
+                        isNearScreen ? <TrendingSearches /> : <LoadingSpinner /> 
+                    }
+                </div>
+            </Suspense>
         </>
     )
 };
