@@ -1,27 +1,35 @@
-import React, {useCallback, useRef, useEffect} from 'react';
+import React from 'react';
+// import React, {useCallback, useRef, useEffect} from 'react';
 import LoadingSpinner from "../../components/LoadingSpinner";
 import ListOfGifs from "../../components/ListOfGifs";
 
 import useGifs from "../../hooks/useGifs";
-import useNearScreen from "../../hooks/useNearScreen";
-import debounce from 'just-debounce-it';
+// import useNearScreen from "../../hooks/useNearScreen";
+// import debounce from 'just-debounce-it';
 
 export default function SearchResults({ params }) {
     const { keyword } = params;
     // Custom Hook:
     const { loading, gifs, setPage } = useGifs({ keyword });
-
-    const externalRef = useRef()
-    const {isNearScreen} = useNearScreen({
-        externalRef: loading ? null : externalRef,
-        once: false,
-    })
-
-    const title = gifs ? `You are seeing ${gifs.length} giff's results of searching for: ${keyword.toLocaleUpperCase() }` : ""
-
     const handleNextPage = () => {
         setPage(prevPage => prevPage + 1)
     }
+
+    const title = gifs ? `You are seeing ${gifs.length} giff's results of searching for: ${keyword.toLocaleUpperCase() }` : ""
+
+    // const externalRef = useRef()
+    // const {isNearScreen} = useNearScreen({
+    //     externalRef: loading ? null : externalRef,
+    //     once: false,
+    // })
+
+    // const debounceHandleNextPage = useCallback(debounce(
+    //     () => setPage(prevPage => prevPage + 1), 250
+    // ), [setPage]);
+
+    // useEffect(function() {
+    //     if(isNearScreen) debounceHandleNextPage()
+    // }, [debounceHandleNextPage, isNearScreen]);
 
     return(
         <>
@@ -33,6 +41,7 @@ export default function SearchResults({ params }) {
                     {decodeURI(keyword)}
                 </h3>
                 <ListOfGifs gifs={gifs} />
+                {/* <div id="visor" ref={externalRef}></div>             */}
             </> 
         }
         <br />

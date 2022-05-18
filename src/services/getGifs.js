@@ -10,7 +10,7 @@ const APIdata_ToGifs = apiResponse => {
             
             return { title, id, url }
         })
-        console.log('gifs :>> ', gifs);
+        // console.log('gifs :>> ', gifs);
         return gifs;
     }
     return [];
