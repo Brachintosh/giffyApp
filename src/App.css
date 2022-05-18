@@ -67,13 +67,27 @@ i {
 }
 
 .App-searchBar {
-  border: rgba(240, 248, 255, 0.58) solid .5px;
   border-radius: 6px;
-  background-color: rgba(255, 99, 71, 0.85);
   box-shadow: 0px .3px 25px  rgba(163, 165, 167, 0.675);
-  padding: .5rem;
+  margin-left: 10%;
+  display: flex;
+  flex-direction: row;
   align-self: center;
   justify-content: center;
+  width: 80%;
+}
+
+.App-searchBar button {
+  width: 30%;
+  /* margin-right: 2px; */
+  border-radius: 10px 0px 0px 10px;
+}
+
+.App-searchBar input {
+  width: 100%;
+  font-size: large;
+  border: rgba(240, 248, 255, 0.58) solid .5px;
+  border-radius: 0px 8px 8px 0px;
 }
 
 .App-main {
@@ -113,20 +127,35 @@ i {
 }
 
 .btn {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  width: 60%;
   border: 1px solid transparent;
   padding: .5rem 1rem;
-  background-color: var(--brand-color_3);
+  background-color: rgb(60, 149, 226);
   color: var(--theme-body-txt);
   cursor: pointer;
   font-size: 1rem;
+  transition: all 750ms;
+  font-weight: 550;
+  text-shadow: 1px 2px 3px #343434;
+  border-radius: 8px;
+  box-shadow: 0px .3px 25px  rgba(163, 165, 167, 0.675);
 }
 
 .btn[disabled] {
   opacity: .3;
   pointer-events: none;
+  transition: all 500ms;
 }
 
 .btn:hover {
-  background-color: var(--brand-color_6);
+  background-color: var(--brand-color_4);
   cursor: pointer;
+  color: #343434;
+  font-weight: 700;
+  text-shadow: 1px 2px 3px #eee;
+  transition: all 750ms;
+  box-shadow: 0.2px .4px 35px  rgba(36, 37, 37, 0.675);
 }
