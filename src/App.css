@@ -69,17 +69,16 @@ i {
 .App-searchBar {
   border-radius: 6px;
   box-shadow: 0px .3px 25px  rgba(163, 165, 167, 0.675);
-  margin-left: 10%;
+  margin-left: 20%;
   display: flex;
   flex-direction: row;
   align-self: center;
   justify-content: center;
-  width: 80%;
+  width: 60%;
 }
 
 .App-searchBar button {
   width: 30%;
-  /* margin-right: 2px; */
   border-radius: 10px 0px 0px 10px;
 }
 
@@ -87,7 +86,8 @@ i {
   width: 100%;
   font-size: large;
   border: rgba(240, 248, 255, 0.58) solid .5px;
-  border-radius: 0px 8px 8px 0px;
+  border-radius: 0px 10px 10px 0px;
+  padding: 5px 0px 5px 10px;
 }
 
 .App-main {
